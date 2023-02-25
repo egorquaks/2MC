@@ -1,0 +1,8 @@
+name: 2ManyChats
+version: '${project.version}'
+main: by.quaks.main
+api-version: 1.19
+prefix: 2MC
+loadbefore: [ discordsrv ]
+depend: [ discordsrv ]
+authors: [ Quaks ]
