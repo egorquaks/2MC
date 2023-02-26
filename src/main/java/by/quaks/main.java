@@ -23,9 +23,16 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-        getLogger().info("2MC успешно запущен"); // Перенести в конфиг языка
-        DiscordSRV.api.subscribe(discordsrvListener); // Подсос к прослушиванию Discord
+        if(!this.getDataFolder().exists()) {
+            try {
+                this.getDataFolder().mkdir();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        initConfigs(new Object[]{
+                new Config()
+        });
         registerListeners(new Listener[]{ // Регестрируем листенеры
                 new VanillaChatDisabler()
         });
