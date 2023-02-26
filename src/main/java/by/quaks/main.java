@@ -1,10 +1,15 @@
 package by.quaks;
 
+import by.quaks.files.Config;
 import by.quaks.listeners.DiscordSrvListener;
 import by.quaks.listeners.chat.VanillaChatDisabler;
 import github.scarsz.discordsrv.DiscordSRV;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 
 public final class main extends JavaPlugin {
 
@@ -16,6 +21,20 @@ public final class main extends JavaPlugin {
     private void registerListeners(Listener[] a){ // Функция регистрации листенеров
         for (Listener elem : a) {
             getServer().getPluginManager().registerEvents(elem, this);
+        }
+    }
+    private void initConfigs(Object[] a){ // Метод регистрации файлов
+        for (Object obj : a){
+            try {
+                Method method = obj.getClass().getMethod("setup");
+                method.invoke(obj);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
