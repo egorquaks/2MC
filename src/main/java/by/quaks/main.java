@@ -18,7 +18,7 @@ public final class main extends JavaPlugin {
         return main;
     } // Это нужно для того, чтобы можно было получить экземпляр(переменная main) из других классов и юзать приколы из JavaPlugin
 
-    private void registerListeners(Listener[] a){ // Функция регистрации листенеров
+    private void registerListeners(Listener[] a){ // Метод регистрации листенеров
         for (Listener elem : a) {
             getServer().getPluginManager().registerEvents(elem, this);
         }
@@ -55,6 +55,8 @@ public final class main extends JavaPlugin {
         registerListeners(new Listener[]{ // Регестрируем листенеры
                 new VanillaChatDisabler()
         });
+        DiscordSRV.api.subscribe(discordsrvListener); // Подсос к прослушиванию Discord
+        getLogger().info("2MC успешно запущен"); // Перенести в конфиг языка
     }
 
     @Override
