@@ -1,1 +1,6 @@
-test: 123
+LocalChat: true
+LocalChatPrefix: "!"
+LocalChatRadius: 100
+LocalChatDesignation: true
+LocalChatDesignationSymbol: "[L]"
+GlobalChatDesignationSymbol: "[G]"
