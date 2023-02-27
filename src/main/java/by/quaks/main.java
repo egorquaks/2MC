@@ -1,5 +1,6 @@
 package by.quaks;
 
+import by.quaks.files.ChatRooms;
 import by.quaks.files.Config;
 import by.quaks.listeners.DiscordSrvListener;
 import by.quaks.listeners.chat.VanillaChatDisabler;
@@ -42,7 +43,7 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        if(!this.getDataFolder().exists()) {
+        if(!this.getDataFolder().exists()) { // Создание папки для хранения конфигурационных файлов
             try {
                 this.getDataFolder().mkdir();
             } catch (Exception e) {
@@ -50,7 +51,8 @@ public final class main extends JavaPlugin {
             }
         }
         initConfigs(new Object[]{
-                new Config()
+                new Config(),
+                new ChatRooms()
         });
         registerListeners(new Listener[]{ // Регестрируем листенеры
                 new VanillaChatDisabler()
