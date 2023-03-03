@@ -1,0 +1,7 @@
+Enabled: true
+GlobalChatPrefix: "!"
+GlobalChatPrefixInChat: "[G]"
+GlobalChatPrefixInChatColor: "#f4f47c"
+LocalChatPrefixInChat: "[L]"
+LocalChatPrefixInChatColor: "#808080"
+Formatting: "%chat-type% | %player% • %message%"

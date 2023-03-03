@@ -7,8 +7,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class ChatRooms implements Config{
-    static String name = "chat_rooms"; // Имя, которое получит файл
+public class MainConfig implements Config{
+    static String name = "config"; // Имя, которое получит файл
     private static File file; // Переменная file типа File. Использование см. ниже
     private static FileConfiguration fileConfiguration; // Переменная fileConfiguration типа FileConfiguration. Использование см. ниже
     public static void setup() {

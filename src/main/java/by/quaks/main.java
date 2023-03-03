@@ -2,6 +2,7 @@ package by.quaks;
 
 import by.quaks.files.ChatRooms;
 import by.quaks.files.Config;
+import by.quaks.files.MainConfig;
 import by.quaks.listeners.DiscordSrvListener;
 import by.quaks.listeners.chat.VanillaChatDisabler;
 import github.scarsz.discordsrv.DiscordSRV;
@@ -24,20 +25,19 @@ public final class main extends JavaPlugin {
             getServer().getPluginManager().registerEvents(elem, this);
         }
     }
-    private void initConfigs(Object[] a){ // Метод регистрации файлов
-        for (Object obj : a){
+    private void initConfigs(Config[] a){ // Метод регистрации файлов
+        for (Config obj : a){
+            Class<?> clazz = obj.getClass();
             try {
-                Method method = obj.getClass().getMethod("setup");
-                method.invoke(obj);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
+                Method method = clazz.getDeclaredMethod("setup");
+                method.invoke(null);
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
             }
         }
     }
+
+
 
     private DiscordSrvListener discordsrvListener = new DiscordSrvListener(this); // Переменная типа DiscordSRVListener. Использование см. ниже
 
@@ -50,8 +50,8 @@ public final class main extends JavaPlugin {
                 e.printStackTrace();
             }
         }
-        initConfigs(new Object[]{
-                new Config(),
+        initConfigs(new Config[]{
+                new MainConfig(),
                 new ChatRooms()
         });
         registerListeners(new Listener[]{ // Регестрируем листенеры
