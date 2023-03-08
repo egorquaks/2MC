@@ -111,16 +111,16 @@ public class MessageGenerator {
                 ));
                 componentChatType = new TextComponent(ChatFormatting.get().getString("ChatType.Type.Local"));
                 componentChatType.setColor(ChatColor.of(ChatFormatting.get().getString("ChatType.Color.Local")));
-                componentChatType.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(ChatFormatting.get().getString("ChatType.HoverEvent.Value")
-                        .replaceAll("%time%",formattedTime)
-                        .replaceAll("%player-name%", sender.getName())
-                        .replaceAll("%message%",message)
-                        .replaceAll("%chat-form-prefix%",ChatFormatting.get().getString("ChatType.Type.Local"))).color(ChatColor.GRAY).create()));
-                componentChatType.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND,ChatFormatting.get().getString("ChatType.ClickEvent.Value")
-                        .replaceAll("%time%",formattedTime)
-                        .replaceAll("%player-name%", sender.getName())
-                        .replaceAll("%message%",message)
-                        .replaceAll("%chat-form-prefix%",ChatFormatting.get().getString("ChatType.Type.Local"))));
+//                componentChatType.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(ChatFormatting.get().getString("ChatType.HoverEvent.Value")
+//                        .replaceAll("%time%",formattedTime)
+//                        .replaceAll("%player-name%", sender.getName())
+//                        .replaceAll("%message%",message)
+//                        .replaceAll("%chat-form-prefix%",ChatFormatting.get().getString("ChatType.Type.Local"))).color(ChatColor.GRAY).create()));
+//                componentChatType.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND,ChatFormatting.get().getString("ChatType.ClickEvent.Value")
+//                        .replaceAll("%time%",formattedTime)
+//                        .replaceAll("%player-name%", sender.getName())
+//                        .replaceAll("%message%",message)
+//                        .replaceAll("%chat-form-prefix%",ChatFormatting.get().getString("ChatType.Type.Local"))));
                 break;
         }
         Map<String, TextComponent> placeholders = new HashMap<>();
