@@ -1,5 +1,6 @@
 package by.quaks;
 
+import by.quaks.chat.listeners.CustomRoomListener;
 import by.quaks.chat.listeners.LocalChatListener;
 import by.quaks.commands.Reload;
 import by.quaks.files.ChatRooms;
@@ -67,7 +68,8 @@ public final class main extends JavaPlugin {
         registerListeners(new Listener[]{ // Регестрируем листенеры чата
                 new VanillaChatDisabler(),
                 new GlobalChatListener(),
-                new LocalChatListener()
+                new LocalChatListener(),
+                new CustomRoomListener()
         });
         DiscordSRV.api.subscribe(discordsrvListener); // Подсос к прослушиванию Discord
         getLogger().info("2MC успешно запущен"); // Перенести в конфиг языка
