@@ -1,7 +1,32 @@
+#Enabled - включение/выключение системы глобального и локального чатов
 Enabled: true
-GlobalChatPrefix: "!"
+
+#GlobalChatPrefix - префикс, используемый для общения в глобальном чате
+GlobalChatPrefix: '!'
+
+#GlobalChatPrefixInChat - оформление типа чата внутри игры (глобального)
 GlobalChatPrefixInChat: "[G]"
-GlobalChatPrefixInChatColor: "#f4f47c"
+
+#GlobalChatPrefixInChatColor - Цвет оформления типа чата (глобального)
+GlobalChatPrefixInChatColor: "#F9E79F"
+
+#LocalChatPrefixInChat - оформление типа чата внутри игры (глобального)
 LocalChatPrefixInChat: "[L]"
+
+#GlobalChatPrefixInChatColor - Цвет оформления типа чата (локального)
 LocalChatPrefixInChatColor: "#808080"
-Formatting: "%chat-type% | %player% • %message%"
+
+MessageColor: "#FFFFFF"
+
+OtherColor: "#CCD1D1"
+
+PlayerNameColor: "#82E0AA"
+
+#LocalChatRadius - радиус сферы с центров в точке отправления, при нахождении в которой, сообщеня будут доставляться
+LocalChatRadius: 100
+
+#Formatting - форматирование чата
+# %chat-type% - тип чата (задаётся в GlobalChatPrefixInChat и LocalChatPrefixInChat)
+# %playerName% - ник отправителя
+# %message% - сообщение
+Formatting: "%chat-type% | %playerName% • %message%"

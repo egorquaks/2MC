@@ -1,17 +1,24 @@
-package by.quaks.utils;
+package by.quaks.chat.utils;
 
 import by.quaks.files.ChatRooms;
-import by.quaks.files.Config;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 
-import java.awt.print.Paper;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PrefixHandler {
+    public static char getFirstChar(String message){
+        return message.charAt(0);
+    }
+    public static String GetCustomPrefix(String message){
+        String prefix;
+        if (message.startsWith("@") && message.length() > 1) {
+            prefix = message.substring(0, 2);
+        }else return null;
+        return prefix;
+    }
     //TextComponent message, Collection<? extends Player> res, Player sender TODO
     public static List<Player> ListDeliverMessageTo(String prefix){
         Server server = Bukkit.getServer();

@@ -7,8 +7,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class LocalGlobalChat {
-    static String name = "local-global_chat"; // Имя, которое получит файл
+public class ChatFormatting implements Config{
+    static String name = "chat-formatting"; // Имя, которое получит файл
     private static File file; // Переменная file типа File. Использование см. ниже
     private static FileConfiguration fileConfiguration; // Переменная fileConfiguration типа FileConfiguration. Использование см. ниже
     public static void setup() {

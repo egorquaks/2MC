@@ -1,10 +1,14 @@
 package by.quaks;
 
+import by.quaks.commands.Reload;
 import by.quaks.files.ChatRooms;
 import by.quaks.files.Config;
+import by.quaks.files.ChatFormatting;
 import by.quaks.files.MainConfig;
 import by.quaks.listeners.DiscordSrvListener;
-import by.quaks.listeners.chat.VanillaChatDisabler;
+import by.quaks.chat.listeners.GlobalChatListener;
+import by.quaks.chat.listeners.VanillaChatDisabler;
+import dev.jorel.commandapi.CommandAPI;
 import github.scarsz.discordsrv.DiscordSRV;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -43,6 +47,10 @@ public final class main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        CommandAPI.onEnable(this);
+
+        Reload.Register();
+
         if(!this.getDataFolder().exists()) { // Создание папки для хранения конфигурационных файлов
             try {
                 this.getDataFolder().mkdir();
@@ -52,10 +60,12 @@ public final class main extends JavaPlugin {
         }
         initConfigs(new Config[]{
                 new MainConfig(),
-                new ChatRooms()
+                new ChatRooms(),
+                new ChatFormatting()
         });
-        registerListeners(new Listener[]{ // Регестрируем листенеры
-                new VanillaChatDisabler()
+        registerListeners(new Listener[]{ // Регестрируем листенеры чата
+                new VanillaChatDisabler(),
+                new GlobalChatListener()
         });
         DiscordSRV.api.subscribe(discordsrvListener); // Подсос к прослушиванию Discord
         getLogger().info("2MC успешно запущен"); // Перенести в конфиг языка

@@ -1,4 +1,4 @@
-package by.quaks.listeners.chat;
+package by.quaks.chat.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

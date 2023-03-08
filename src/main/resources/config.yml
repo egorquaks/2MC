@@ -1,6 +1,4 @@
-LocalChat: true
-LocalChatPrefix: "!"
-LocalChatRadius: 100
-LocalChatDesignation: true
-LocalChatDesignationSymbol: "[L]"
-GlobalChatDesignationSymbol: "[G]"
+#DiscordLinkedOnly - доставляться в майнкрафт будут только сообщения от игроков, у который включена линковка (/discordsrv:discord link)
+GlobalChatSystem: true
+GlobalChatPrefix: "!"
+DiscordLinkedOnly: true

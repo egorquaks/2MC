@@ -1,0 +1,47 @@
+# PLACEHOLDERS:
+# %chat-prefix% returns chat prefix used to chat (EG: !)
+# %chat-form-prefix% returns chat prefix (EG: [G])
+# %player-name% returns the player(sender) name
+# %message% returns message
+# %time% - returns time
+#
+# NOT EVERY FIELD CAN ACCEPT ANY PLACEHOLDERS!
+# FIELDS THAT CAN ACCEPT PLACEHOLDERS ARE MARKED!
+# EG.
+# Field: "TEST" # %player-name%
+#
+#
+Time: # Time Correction
+  HoursOffset: 0
+  MinutesOffset: 0
+ChatType:
+  Color:
+    #https://colorhunt.co/palette/f7c8e0dfffd8b4e4ff95bdff
+    Global: "#DFFFD8"
+    Local: "#B4E4FF"
+    Custom: "#F7C8E0"
+  HoverEvent:
+    Value: "Click to chat using \"%chat-prefix%\"" # %chat-prefix%
+  ClickEvent: # Always SUGGEST_COMMAND
+    Value: "%chat-prefix%" # %chat-prefix%
+  Type:
+    Global: "[G]"
+    Local: "[L]"
+PlayerName:
+  Color: "#95BDFF"
+  HoverEvent:
+    Value: "/tell %player-name%" # %player-name%
+  ClickEvent: # Always SUGGEST_COMMAND
+    Value: "/tell %player-name% " # %player-name%
+  String: "%player-name%" # %player-name%
+Message:
+  Color: "#ffffff"
+  HoverEvent:
+    Value: "Copy"
+  ClickEvent: # Always COPY_TO_CLIPBOARD
+    Value: "%time% %chat-form-prefix% | %player-name% • %message%" # %chat-type% %player-name% %message% %time%
+  String: "%message%" # %message%
+Other:
+  Color: "#CCD1D1"
+
+Formatting: "%chat-form-prefix% | %player-name% • %message%" # %chat-type% %player-name% %message% %time%
