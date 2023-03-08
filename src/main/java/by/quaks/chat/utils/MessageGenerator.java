@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MessageGenerator {
-    static enum MessageType {
+    public static enum MessageType {
         Global, Local//, Custom
     }
 

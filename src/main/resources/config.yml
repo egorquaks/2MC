@@ -1,4 +1,5 @@
 #DiscordLinkedOnly - доставляться в майнкрафт будут только сообщения от игроков, у который включена линковка (/discordsrv:discord link)
 GlobalChatSystem: true
 GlobalChatPrefix: "!"
+LocalChatRadius: 100
 DiscordLinkedOnly: true
